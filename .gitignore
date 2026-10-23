@@ -1,0 +1,22 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+.wrangler/
+vendor/
+
+# Secrets (keep the example)
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+*.log
+
+# Agent/tool state — local only
+.pi/
+.hermes/
+
+# Claude Code personal settings (the rest of .claude/ is committed)
+.claude/settings.local.json
