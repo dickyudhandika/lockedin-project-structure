@@ -54,7 +54,7 @@ That lands `AGENTS.md`, `CLAUDE.md`, `TASKS.md`, `docs/`, and `.claude/skills/`.
 
 ### 2. Merge agent rules, never replace them
 
-- **`AGENTS.md` already exists** → keep its project facts (stack, commands, conventions) and splice in the template's **Lanes** table, **Rules 1–6**, and status markers. The rules assume `TASKS.md` and `docs/` exist; copy those first.
+- **`AGENTS.md` already exists** → keep its project facts (stack, commands, conventions) and splice in the template's **Lanes** table, **Rules 1–7**, and status markers. The rules assume `TASKS.md` and `docs/` exist; copy those first.
 - **Only `CLAUDE.md`, `.cursorrules`, `.github/copilot-instructions.md`, or `GEMINI.md` exist** → make `AGENTS.md` canonical and reduce the others to pointers (`@AGENTS.md` in `CLAUDE.md`, a one-line "see AGENTS.md" elsewhere). Two copies of the rules is the failure mode; they drift within a week.
 - **Monorepo with per-folder instructions** → keep them, link each from **Layout**, and let the root `AGENTS.md` stay project-wide. Do not flatten folder rules into the root.
 

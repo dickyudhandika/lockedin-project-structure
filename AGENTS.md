@@ -103,6 +103,10 @@ description: "What it does. Use when the user asks for X, Y, or Z."
 Instructions.
 ```
 
+### Rule 7 — Delegate inside the session
+
+When a task needs another agent or model, delegate it inside the current session with the tool's own delegation (a subagent, a delegate task, or a worker) so the brief, the work and the evidence stay together, and say so in the reply ("delegated inside this session/thread"). Open a separate session, thread or worktree only when the owner asks for one; if you replace one, say the old one is closed. A delegated task keeps its owner lane — the delegating agent does not edit the other lane's files — and the delegation is recorded in the `TASKS.md` Log.
+
 ## Common commands
 
 ```bash
