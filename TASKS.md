@@ -5,7 +5,7 @@ Take the first `[ ]` task, top to bottom, whose **Needs** are all `[x]`. If its 
 
 `[ ]` todo · `[~]` in progress · `[x]` done · `[!]` blocked
 
-**Lanes:** `UI` = Claude Code · `BACKEND` = opencode · `OWNER` = human.
+**Lanes:** `UI` (frontier model) · `BACKEND` (cheap model) · any extra role · `OWNER` = human. Which agent and model run each one: [`SETUP.md`](SETUP.md). A lane not listed there is set up first (Rule 0).
 
 **Queue source:** [FILL: the plan this queue is split from, e.g. `docs/2-plans/mvp-scope.md`].
 
@@ -15,11 +15,13 @@ Row format:
 - [ ] **<ID>** · <LANE> · <what to do> · Needs: <IDs or —> · Done when: <observable check>
 ```
 
+IDs are `<LANE><n>`, one counter per lane: `UI3`, `BACKEND12`, `OWNER2`, `CAPTION1`.
+
 ---
 
 ## Phase 1 — Setup
 
-- [ ] **OWNER1** · OWNER · Fill the blanks: pitch, stack, and the lane ownership table in `AGENTS.md`; the bet and rules in `docs/0-strategy.md`; the title and **Queue source** in `TASKS.md`; replace `README.md` with the project's own. In an existing repo, answer from the code — see [`ADOPTION.md`](ADOPTION.md) step 3. · Needs: — · Done when: `grep -rn "\[FILL" AGENTS.md docs/` returns nothing, `README.md` describes the project rather than the template, and `ADOPTION.md` is deleted.
+- [ ] **OWNER1** · OWNER · Fill the blanks: who runs each role in `SETUP.md` (the setup interview, Rule 0); pitch, stack, and the lane ownership table in `AGENTS.md`; the bet and rules in `docs/0-strategy.md`; the title and **Queue source** in `TASKS.md`; replace `README.md` with the project's own. In an existing repo, answer from the code — see [`ADOPTION.md`](ADOPTION.md) step 3. · Needs: — · Done when: `grep -rn "\[FILL" SETUP.md AGENTS.md docs/` returns nothing, **Confirmed by** in `SETUP.md` names you, `README.md` describes the project rather than the template, and `ADOPTION.md` is deleted.
 - [ ] **BACKEND1** · BACKEND · Scaffold the repo for the stack in `AGENTS.md`; make dev, test, and build run; record the commands under "Common commands". · Needs: OWNER1 · Done when: the dev server starts, one test passes, and the commands in `AGENTS.md` are the ones that worked.
 - [ ] **UI1** · UI · First screen / app shell, styled with the project's tokens. · Needs: BACKEND1 · Done when: the shell renders and the flow named in the plan can be walked by hand.
 

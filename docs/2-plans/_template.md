@@ -5,6 +5,8 @@
 
 **Status:** draft
 
+**Grilled:** — *(set to YYYY-MM-DD after a grilling session with the owner; required before `reviewed`)*
+
 **Execution:** tracked in [`TASKS.md`](../../TASKS.md). This doc stays `reviewed` until every task split from it is `[x]`.
 
 ---
@@ -25,7 +27,9 @@ What is true when this plan is done, in terms a user would notice.
 
 How it works. Name the data, the endpoints, the screens. Keep decisions here, not in `TASKS.md`.
 
-## 4. Open decisions
+## 4. Decisions
+
+Filled from the grilling session: one row per question, with the answer the owner gave.
 
 | # | Question | Options | Decision |
 |---|---|---|---|

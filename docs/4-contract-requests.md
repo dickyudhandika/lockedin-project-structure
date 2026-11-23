@@ -1,6 +1,6 @@
 # Contract requests — UI ↔ BACKEND
 
-UI (Claude Code) needs something only BACKEND (opencode) owns: a field, endpoint, table, error code, or a fix in BACKEND files. Add one line here, keep the UI task moving with a fixture or mock, and let BACKEND clear open requests before starting its next task.
+UI needs something only BACKEND owns: a field, endpoint, table, error code, or a fix in BACKEND files. Add one line here, keep the UI task moving with a fixture or mock, and let BACKEND clear open requests before starting its next task.
 
 Format:
 

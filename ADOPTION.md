@@ -20,9 +20,9 @@ Greenfield is a straight line. A retrofit runs the same pipeline in reverse for 
    cd my-project && git init
    ```
 
-2. **Fill the blanks before you start building.** `grep -rn "\[FILL" AGENTS.md docs/` lists them — `AGENTS.md` (pitch, stack, lanes, layout), `docs/0-strategy.md` (bet, rules, gates, risks, glossary) — plus the title and **Queue source** in `TASKS.md`.
+2. **Fill the blanks before you start building.** Open your coding agent first: Rule 0 runs the setup interview and fills `SETUP.md` with your UI agent + frontier model and your BACKEND agent + cheap model. Then `grep -rn "\[FILL" SETUP.md AGENTS.md docs/` lists the rest — `AGENTS.md` (pitch, stack, lanes, layout), `docs/0-strategy.md` (bet, rules, gates, risks, glossary) — plus the title and **Queue source** in `TASKS.md`.
 
-3. **Name the lanes against folders that will exist**, not folders you hope to have. If one person and one agent do everything, collapse `UI` and `BACKEND` into one lane now; splitting later is cheap, unwinding two half-owned folders is not.
+3. **Name the lanes against folders that will exist**, not folders you hope to have. If one person and one agent do everything, put the same agent and model in both `SETUP.md` rows, but keep the folder split; unwinding two half-owned folders is not cheap.
 
 4. **Run the queue.** `OWNER1` first, then `BACKEND1` scaffolds and confirms the stack and commands written in step 2 were real. If they were guesses, correct `AGENTS.md` in the same commit.
 
@@ -54,7 +54,7 @@ That lands `AGENTS.md`, `CLAUDE.md`, `TASKS.md`, `docs/`, and `.claude/skills/`.
 
 ### 2. Merge agent rules, never replace them
 
-- **`AGENTS.md` already exists** → keep its project facts (stack, commands, conventions) and splice in the template's **Lanes** table, **Rules 1–7**, and status markers. The rules assume `TASKS.md` and `docs/` exist; copy those first.
+- **`AGENTS.md` already exists** → keep its project facts (stack, commands, conventions) and splice in the template's **Lanes** table, **Rules 0–7**, **Naming**, and status markers. Copy `SETUP.md` and run the setup interview. The rules assume `TASKS.md` and `docs/` exist; copy those first.
 - **Only `CLAUDE.md`, `.cursorrules`, `.github/copilot-instructions.md`, or `GEMINI.md` exist** → make `AGENTS.md` canonical and reduce the others to pointers (`@AGENTS.md` in `CLAUDE.md`, a one-line "see AGENTS.md" elsewhere). Two copies of the rules is the failure mode; they drift within a week.
 - **Monorepo with per-folder instructions** → keep them, link each from **Layout**, and let the root `AGENTS.md` stay project-wide. Do not flatten folder rules into the root.
 
@@ -62,6 +62,7 @@ That lands `AGENTS.md`, `CLAUDE.md`, `TASKS.md`, `docs/`, and `.claude/skills/`.
 
 | Blank | Where the true answer already lives |
 |---|---|
+| `SETUP.md` | The agents and models the team actually runs today — ask each person; Rule 0 interviews them. |
 | Stack, commands | `package.json`, `Makefile`, CI workflow. Run each command once; edit the doc if it fails. |
 | Lane ownership | Actual top-level folders. Split by what a change touches, and give every folder exactly one lane. |
 | The bet, **Who** | Landing page, pitch deck, the last thing you told a user. |
@@ -104,7 +105,8 @@ Each commit is reviewable alone, and stopping after any of them still leaves a w
 ## Both paths end here
 
 ```text
-[ ] grep -rn "\[FILL" AGENTS.md docs/ returns nothing
+[ ] grep -rn "\[FILL" SETUP.md AGENTS.md docs/ returns nothing
+[ ] SETUP.md Confirmed by names you, and every agent in it lists the grilling skill
 [ ] TASKS.md title and Queue source are filled
 [ ] AGENTS.md lanes match real folders, and every folder has one lane
 [ ] dev / test / build commands were copied from CI and run once
